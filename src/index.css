@@ -2,58 +2,58 @@
 
 :root {
   /* Common variables */
-  --font-heading: 'Cormorant Garamond', serif;
-  --font-body: 'Inter', sans-serif;
-  --transition-fast: 0.2s ease;
-  --transition-normal: 0.3s ease;
-  --transition-slow: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  --font-heading: 'Cinzel', serif;
+  --font-body: 'Outfit', sans-serif;
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   --border-radius-sm: 8px;
   --border-radius-md: 16px;
   --border-radius-lg: 24px;
   --border-radius-xl: 32px;
-  --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.03);
-  --shadow-md: 0 15px 45px rgba(28, 45, 32, 0.05);
-  --shadow-lg: 0 25px 60px rgba(28, 45, 32, 0.1);
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 16px 48px rgba(12, 30, 20, 0.08);
+  --shadow-lg: 0 32px 80px rgba(12, 30, 20, 0.15);
 
   /* Brand Colors Setup */
   --primary-hue: 145;
   --primary-sat: 35%;
   --primary-lightness: 18%;
 
-  /* Dark Theme (Fallback) */
-  --bg-color: hsl(145, 25%, 8%);
-  --surface-color: hsl(145, 20%, 12%);
-  --surface-hover: hsl(145, 20%, 16%);
-  --surface-glass: rgba(18, 28, 22, 0.75);
-  --border-color: rgba(255, 255, 255, 0.08);
-  --text-color: hsl(40, 20%, 82%);
-  --text-muted: hsl(40, 10%, 62%);
-  --text-bright: hsl(40, 30%, 94%);
-  --primary-color: hsl(var(--primary-hue), var(--primary-sat), var(--primary-lightness));
-  --primary-accent: hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-lightness) + 8%));
-  --accent-color: hsl(43, 60%, 53%);
-  --accent-bright: hsl(43, 70%, 63%);
-  --glass-blur: blur(20px);
-  --selection-bg: rgba(197, 154, 95, 0.25);
-  --hero-glow: radial-gradient(circle at 50% -20%, hsla(43, 60%, 53%, 0.06), transparent 70%);
+  /* Dark Theme (Fallback - Luxury Obsidian Emerald) */
+  --bg-color: #06100a;
+  --surface-color: #0d1e14;
+  --surface-hover: #142a1d;
+  --surface-glass: rgba(6, 16, 10, 0.75);
+  --border-color: rgba(197, 154, 95, 0.18);
+  --text-color: #e5e9e6;
+  --text-muted: #95a399;
+  --text-bright: #f0f4f1;
+  --primary-color: #122c1b;
+  --primary-accent: #1c452b;
+  --accent-color: #d4af37; /* Metallic Gold */
+  --accent-bright: #f3e5ab;
+  --glass-blur: blur(24px);
+  --selection-bg: rgba(212, 175, 55, 0.2);
+  --hero-glow: radial-gradient(circle at 50% -20%, rgba(212, 175, 55, 0.08), transparent 70%);
 }
 
-/* Light Theme (Default rebrand) */
+/* Light Theme (Default rebrand - Luxury Warm Linen) */
 :root.light-mode {
-  --bg-color: #FDFBF7; /* Cream/Alabaster */
-  --surface-color: #F5EFE4; /* Bone/Sand */
-  --surface-hover: #ECE4D6;
-  --surface-glass: rgba(253, 251, 247, 0.85);
-  --border-color: rgba(30, 58, 39, 0.09);
-  --text-color: #2E3B30; /* Forest Charcoal */
-  --text-muted: #5D6C60; /* Sage Muted */
-  --text-bright: #1E2D22; /* Dark Sage Header */
-  --primary-color: #1E3A27; /* Deep Forest Green */
-  --primary-accent: #2E5A3C;
-  --accent-color: #C59A5F; /* Muted Gold */
-  --accent-bright: #DAB68B;
-  --selection-bg: rgba(30, 58, 39, 0.12);
-  --hero-glow: radial-gradient(circle at 50% -20%, rgba(197, 154, 95, 0.1), transparent 70%);
+  --bg-color: #fbfaf5;
+  --surface-color: #f3f0e6;
+  --surface-hover: #e9e4d5;
+  --surface-glass: rgba(251, 250, 245, 0.85);
+  --border-color: rgba(18, 44, 27, 0.12);
+  --text-color: #122c1b;
+  --text-muted: #576d5e;
+  --text-bright: #0a1b10;
+  --primary-color: #122c1b;
+  --primary-accent: #1e4b2e;
+  --accent-color: #b5894b; /* Editorial Muted Gold */
+  --accent-bright: #d4af37;
+  --selection-bg: rgba(18, 44, 27, 0.1);
+  --hero-glow: radial-gradient(circle at 50% -20%, rgba(181, 137, 75, 0.12), transparent 70%);
 }
 
 /* Reset and Global Styles */
@@ -1585,15 +1585,220 @@ select.form-input {
   transform: scale(1.06);
 }
 
+/* ==========================================
+   VEER RICE MILLS - LUXURY DESIGN OVERHAUL
+   ========================================== */
 
+/* Premium Font Overrides */
+body {
+  letter-spacing: 0.2px;
+}
 
+h1, h2, h3, h4 {
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
 
+/* Elegant Text Gradients */
+.gradient-accent-text {
+  background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-bright) 50%, var(--accent-color) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine-gradient 6s linear infinite;
+}
 
+@keyframes shine-gradient {
+  to { background-position: 200% center; }
+}
 
+/* Glassmorphic Panel Overrides */
+.glass-panel {
+  background: var(--surface-glass) !important;
+  backdrop-filter: var(--glass-blur) !important;
+  -webkit-backdrop-filter: var(--glass-blur) !important;
+  border: 1px solid var(--border-color) !important;
+  box-shadow: var(--shadow-sm) !important;
+  transition: all var(--transition-normal) !important;
+}
 
+.glass-panel:hover {
+  transform: translateY(-6px) scale(1.005);
+  border-color: rgba(212, 175, 55, 0.4) !important;
+  box-shadow: 0 20px 40px rgba(212, 175, 55, 0.08) !important;
+}
 
+/* Interactive Nav-Link Underlines */
+.nav-link {
+  transition: color var(--transition-fast);
+}
 
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-color) 50%, transparent);
+  transition: all var(--transition-normal);
+  transform: translateX(-50%);
+}
 
+.nav-link:hover::after,
+.nav-link-active::after {
+  width: 80%;
+}
 
+.active-dot {
+  display: none !important; /* Hide dot indicator in favor of line animation */
+}
 
+/* Button Shimmer Effect */
+.btn {
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  transform: skewX(-25deg);
+  transition: all 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn:hover::before {
+  left: 180%;
+}
+
+/* Stats Card Visual Highlight */
+.stat-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+  opacity: 0.6;
+}
+
+.stat-card h3 {
+  font-size: 2.2rem;
+  color: var(--accent-color);
+}
+
+/* Premium Product Customizations */
+.product-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--border-radius-md);
+  padding: 1.5rem !important;
+}
+
+.product-tag {
+  background: rgba(212, 175, 55, 0.08) !important;
+  color: var(--accent-color) !important;
+  border: 1px solid rgba(212, 175, 55, 0.25) !important;
+  font-size: 0.65rem !important;
+  letter-spacing: 1.5px !important;
+  font-weight: 700;
+  padding: 4px 12px !important;
+  border-radius: 30px !important;
+}
+
+.product-specs .spec-row {
+  border-bottom: 1px dashed var(--border-color);
+  padding: 0.5rem 0;
+}
+
+.product-specs .spec-row strong {
+  color: var(--accent-color);
+  font-family: var(--font-body);
+}
+
+/* Section Title Underlines */
+.section-header h2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-color) 50%, transparent);
+  margin: 1.25rem auto 0 auto;
+  border-radius: 2px;
+}
+
+/* Hero Section Enhancements */
+.hero-title {
+  font-size: 4.8rem !important;
+  letter-spacing: -1.5px !important;
+  line-height: 1.1 !important;
+}
+
+.hero-title span {
+  font-style: italic;
+  font-family: var(--font-heading);
+  text-transform: capitalize;
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.8rem !important;
+  }
+}
+
+.hero-organic-frame {
+  border: 2px solid rgba(212, 175, 55, 0.3) !important;
+  box-shadow: 0 30px 60px rgba(12, 30, 20, 0.25) !important;
+}
+
+/* interactive timeline steps */
+.timeline-step-btn {
+  transition: all var(--transition-normal);
+}
+
+.timeline-step-btn.step-active {
+  color: var(--accent-color) !important;
+  transform: translateY(-3px);
+}
+
+.timeline-step-btn.step-active .step-icon-wrap {
+  background: var(--accent-color) !important;
+  color: #111 !important;
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.3) !important;
+}
+
+/* Sommelier Selection Highlights */
+.sommelier-card {
+  transition: all var(--transition-normal) !important;
+}
+
+.sommelier-card:hover {
+  transform: translateY(-8px) !important;
+  border-color: var(--accent-color) !important;
+  box-shadow: 0 15px 35px rgba(212, 175, 55, 0.1) !important;
+}
+
+/* Global scrollbar gold tint */
+::-webkit-scrollbar-thumb {
+  background: var(--accent-color);
+  opacity: 0.7;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-bright);
+}
 
