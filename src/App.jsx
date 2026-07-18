@@ -13,6 +13,7 @@ import CounterBanner from './components/CounterBanner';
 import FeaturesGrid from './components/FeaturesGrid';
 import Services from './components/Services';
 import Certificates from './components/Certificates';
+import AIChatbot from './components/AIChatbot';
 
 export default function App() {
   const [isDarkMode, setIsDarkMode] = useState(false); // Default to Light Mode (Haryana Rice Mill style)
@@ -195,6 +196,9 @@ export default function App() {
         <span>📞</span>
         <span className="call-tooltip">Call +91 98765 43210</span>
       </a>
+
+      {/* Built-in Veer AI Sales Assistant Chatbot */}
+      <AIChatbot />
 
       {/* Custom Follower Cursor (Trailing Double Circle) */}
       {isDesktop && (
