@@ -106,7 +106,7 @@ export default function MillingProcess() {
             {/* Interactive Graphic */}
             <div className="milling-details-graphic" style={{ overflow: 'hidden', borderRadius: '24px', border: '1px solid var(--border-color)', aspectRatio: '4/3', width: '100%', maxWidth: '300px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               {activeStep === 3 ? (
-                <img src="/quality_lab.png" alt="Veer Optical Color Sorting Inspection" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <img src="/images/Qwality Process.jpeg" alt="Veer Optical Color Sorting Inspection" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               ) : (
                 <svg viewBox="0 0 200 200" className="milling-svg" xmlns="http://www.w3.org/2000/svg" style={{ width: '80%', height: 'auto' }}>
                   <circle cx="100" cy="100" r="80" fill="none" stroke="var(--border-color)" strokeWidth="4" />

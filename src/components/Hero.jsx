@@ -110,10 +110,10 @@ export default function Hero() {
         {/* Hero Visual Card (Organic frame rebrand) */}
         <div className="hero-visual animate-float" style={{ zIndex: 10 }}>
           <div className="hero-organic-frame">
-            <img src="/hero_rice_field.png" alt="Veer Rice Mills Himalayan Terraces" />
+            <img src="/images/Rice Mill Image.jpeg" alt="Veer Rice Mills Processing Plant" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             <div className="organic-badge">
-              <strong>Himalayan Foothills</strong>
-              <span>100% Natural Irrigation</span>
+              <strong>Modern Milling</strong>
+              <span>State-of-the-Art Technology</span>
             </div>
           </div>
         </div>

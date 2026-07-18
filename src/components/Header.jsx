@@ -63,9 +63,7 @@ export default function Header({ isDarkMode, setIsDarkMode }) {
       <div className="container nav-container">
         {/* Brand Logo */}
         <a href="#home" onClick={(e) => { e.preventDefault(); handleNavClick('home'); }} className="logo-wrap">
-          <svg className="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
-            <path d="M12 2C11.5 2 11 4 11 6C11 8.5 12.5 10 14 11C15.5 12 16 14 16 15C16 16.5 14.5 18 13 18C11.5 18 10 17 9.5 15.5C9.2 14.7 9.5 13.5 10 12.5C9 13.5 8 15 8 16.5C8 19 10 21 12.5 21C15.5 21 18 18.5 18 15C18 11.5 15.5 8.5 14 7C13 6 12 2 12 2Z" fill="var(--accent-color)" />
-          </svg>
+          <img src="/images/Logo.jpeg" alt="Veer Rice Mills Logo" style={{ width: '36px', height: '36px', borderRadius: '50%', objectFit: 'cover', border: '1.5px solid var(--accent-color)' }} />
           <div className="logo-text">
             <span className="logo-title">VEER</span>
             <span className="logo-sub">RICE MILLS</span>

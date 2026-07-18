@@ -8,16 +8,17 @@ export default function Products() {
 
   const products = [
     {
-      id: 'trad-bas',
-      name: 'Traditional Basmati Rice',
+      id: '1121-golden-sella',
+      name: '1121 Golden Sella Basmati Rice',
       category: 'basmati',
-      length: '7.4 mm',
+      length: '8.35 mm',
       elongation: '2.0x',
       moisture: '12.0%',
       broken: '< 1%',
-      aroma: 'Rich & Intense',
-      tag: 'Royal Choice',
-      desc: 'Known as the queen of fragrance. Aged naturally for 12 months to bring out maximum aroma and grain separation upon cooking.'
+      aroma: 'Subtle & Nutty',
+      tag: 'Biryani Special',
+      image: '/images/1121 Golden Sella.jpeg',
+      desc: 'Parboiled basmati with a gorgeous golden hue. Parboiling locks in nutrients, making it highly durable for catering and heavy biryani preparations.'
     },
     {
       id: '1121-steam',
@@ -27,57 +28,166 @@ export default function Products() {
       elongation: '2.2x',
       moisture: '12.5%',
       broken: '< 0.5%',
-      aroma: 'Excellent Fragrance',
-      tag: 'Best Exporter Grade',
-      desc: 'The longest grain Basmati available globally. Exceptional cooking quality, non-sticky texture, and fluffy elongation.'
+      aroma: 'Rich & Intense',
+      tag: 'Premium Long Grain',
+      image: '/images/1121 Stream Basmati.jpeg',
+      desc: 'Superb elongation and exquisite fluffiness. Steaming ensures the grain retains its premium basmati texture and yields beautiful separate grains upon cooking.'
     },
     {
-      id: '1509-sella',
-      name: '1509 Golden Sella Basmati',
+      id: '1121-white',
+      name: '1121 White Basmati Rice',
+      category: 'basmati',
+      length: '8.35 mm',
+      elongation: '2.0x',
+      moisture: '12.0%',
+      broken: '< 1%',
+      aroma: 'Very High',
+      tag: 'Royal Choice',
+      image: '/images/1121 White Rice.jpeg',
+      desc: 'The classic raw long basmati grain. Delivers unmatched natural fragrance and premium soft texture, perfect for royal cuisines.'
+    },
+    {
+      id: '1121-white-sella',
+      name: '1121 White Sella Basmati Rice',
+      category: 'basmati',
+      length: '8.35 mm',
+      elongation: '2.0x',
+      moisture: '12.0%',
+      broken: '< 1%',
+      aroma: 'Delicate',
+      tag: 'Popular Export Grade',
+      image: '/images/1121 White Sella.jpeg',
+      desc: 'Parboiled white sella Basmati. Combines the signature extreme length of 1121 basmati with the structural rigidity of sella processing.'
+    },
+    {
+      id: '1509-golden-sella',
+      name: '1509 Golden Sella Basmati Rice',
       category: 'basmati',
       length: '8.2 mm',
       elongation: '1.8x',
       moisture: '12.0%',
       broken: '< 1%',
-      aroma: 'Subtle & Sweet',
-      tag: 'Biryani Special',
-      desc: 'Parboiled Basmati with a golden tint. The tough grain surface prevents breaking during bulk cooking, making it the choice for caterers.'
+      aroma: 'Mild',
+      tag: 'Caterer Choice',
+      image: '/images/1509 Golden Sella.jpeg',
+      desc: 'Excellent length 1509 basmati grain parboiled to golden perfection. Cost-effective option for restaurants, hotels, and mass catering.'
     },
     {
-      id: 'pusa-raw',
-      name: 'Pusa Basmati Raw',
+      id: '1509-steam',
+      name: '1509 Steam Basmati Rice',
       category: 'basmati',
-      length: '7.2 mm',
+      length: '8.2 mm',
+      elongation: '2.0x',
+      moisture: '12.5%',
+      broken: '< 0.5%',
+      aroma: 'High',
+      tag: 'Excellent Aroma',
+      image: '/images/1509 Stream Basmati Rice.jpeg',
+      desc: 'Highly aromatic basmati variety processed with advanced steam technology. Grains cook up light, soft, and separate.'
+    },
+    {
+      id: '1509-white',
+      name: '1509 White Basmati Rice',
+      category: 'basmati',
+      length: '8.2 mm',
       elongation: '1.9x',
       moisture: '12.5%',
       broken: '< 1%',
-      aroma: 'Aromatic & Light',
+      aroma: 'Pleasant',
       tag: 'Daily Premium',
-      desc: 'Affordable yet aromatic basmati grain. Offers the classic scent and fluffiness, ideal for premium daily meals.'
+      image: '/images/1509 White Rice.jpeg',
+      desc: 'Standard raw 1509 white basmati. Gives superior taste and authentic basmati aroma, suitable for premium daily consumption.'
     },
     {
-      id: 'pr11-non',
-      name: 'PR11 Premium Non-Basmati',
+      id: '1509-white-sella',
+      name: '1509 White Sella Basmati Rice',
+      category: 'basmati',
+      length: '8.2 mm',
+      elongation: '1.8x',
+      moisture: '12.0%',
+      broken: '< 1%',
+      aroma: 'Delicate',
+      tag: 'Wholesale Favorite',
+      image: '/images/1509 White Sella.jpeg',
+      desc: 'Creamy white parboiled sella rice of 1509 grade. Easy to cook and highly resistant to over-cooking or clumping.'
+    },
+    {
+      id: 'pr14-sella',
+      name: 'PR14 Sella Basmati Rice',
+      category: 'basmati',
+      length: '7.2 mm',
+      elongation: '1.7x',
+      moisture: '12.5%',
+      broken: '< 1%',
+      aroma: 'Medium',
+      tag: 'Premium Blend Grade',
+      image: '/images/PR14 Sella Basmati Rice.jpeg',
+      desc: 'Premium quality grain with good elongation. Excellent choice for custom packaging, high nutritional value, and clean taste.'
+    },
+    {
+      id: 'sugandha-sella',
+      name: 'Sugandha Sella Rice',
+      category: 'basmati',
+      length: '7.8 mm',
+      elongation: '1.8x',
+      moisture: '12.0%',
+      broken: '< 1%',
+      aroma: 'Pleasant & Sweet',
+      tag: 'Fragrant Alternative',
+      image: '/images/Sugandha Sella.jpeg',
+      desc: 'A highly aromatic Basmati-like variety. Known for its intense fragrance and great cooking texture at a highly competitive export price.'
+    },
+    {
+      id: 'sabarmati-sella',
+      name: 'Sabarmati Sella Rice',
+      category: 'basmati',
+      length: '7.4 mm',
+      elongation: '1.7x',
+      moisture: '12.0%',
+      broken: '< 1%',
+      aroma: 'Mild',
+      tag: 'Aromatic Value',
+      image: '/images/Sabarmati Sella.jpeg',
+      desc: 'Traditional aromatic rice processed using parboiled sella method. Delivers good body, sweet taste, and consistent size.'
+    },
+    {
+      id: 'pr11-sella',
+      name: 'PR11 Sella Rice',
       category: 'non-basmati',
       length: '6.8 mm',
       elongation: '1.4x',
       moisture: '13.0%',
       broken: '< 5%',
       aroma: 'Mild',
-      tag: 'High Nutritional Value',
-      desc: 'A long-grain non-basmati variety. Highly popular in African and Middle Eastern households for everyday staple consumption.'
+      tag: 'Nutritional Staple',
+      image: '/images/PR11 Sella.jpeg',
+      desc: 'A premium long-grain non-basmati sella variety. Extremely popular across global markets for daily staple and industrial exports.'
     },
     {
-      id: 'ir64-non',
-      name: 'IR64 White 5% Broken',
+      id: 'rh10-sella',
+      name: 'RH10 Sella Rice',
       category: 'non-basmati',
-      length: '6.0 mm',
-      elongation: '1.2x',
-      moisture: '14.0%',
+      length: '6.5 mm',
+      elongation: '1.4x',
+      moisture: '13.0%',
       broken: '< 5%',
       aroma: 'Neutral',
-      tag: 'Economical Staple',
-      desc: 'Highly demanded short/medium grain non-basmati rice. Highly cleaned and double polished on our modern processing lines.'
+      tag: 'High Demand Staple',
+      image: '/images/RH10 Sella.jpeg',
+      desc: 'High-quality non-basmati sella rice with excellent uniformity. Easy to digest and durable under typical long-distance transport.'
+    },
+    {
+      id: 'sona-mansuri',
+      name: 'Sona Mansuri Rice',
+      category: 'non-basmati',
+      length: '5.2 mm',
+      elongation: '1.3x',
+      moisture: '12.5%',
+      broken: '< 2%',
+      aroma: 'Sweet',
+      tag: 'Everyday Comfort',
+      image: '/images/Sona Mansuri.jpeg',
+      desc: 'Lightweight and aromatic medium-grain rice. Widely consumed in Southern and Central Indian households and popular among diaspora markets.'
     }
   ];
 
@@ -130,8 +240,8 @@ export default function Products() {
             return (
               <div className="product-card glass-panel" key={product.id}>
                 {/* Visual Thumbnail */}
-                <div className="product-thumbnail" style={{ height: '150px', overflow: 'hidden', borderRadius: '12px', marginBottom: '1.25rem', border: '1px solid var(--border-color)' }}>
-                  <img src="/basmati_grains.png" alt={product.name} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.4s ease' }} className="product-thumb-img" />
+                <div className="product-thumbnail" style={{ height: '180px', overflow: 'hidden', borderRadius: '12px', marginBottom: '1.25rem', border: '1px solid var(--border-color)' }}>
+                  <img src={product.image || "/basmati_grains.png"} alt={product.name} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.4s ease' }} className="product-thumb-img" />
                 </div>
                 <div className="product-header">
                   <span className="product-tag">{product.tag}</span>
