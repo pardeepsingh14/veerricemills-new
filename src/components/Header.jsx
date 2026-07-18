@@ -113,7 +113,7 @@ export default function Header({ isDarkMode, setIsDarkMode }) {
               </select>
               
               {/* Native Google Translate Hidden Mounting Anchor */}
-              <div id="google_translate_element" style={{ display: 'inline-block' }}></div>
+              <div id="google_translate_element" style={{ display: 'none' }}></div>
             </div>
             
             {/* Social Links */}
