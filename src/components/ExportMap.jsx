@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Globe, Plane, ShieldCheck, Ship } from 'lucide-react';
+import { Globe, Plane, ShieldCheck, Ship, Leaf, Target, ZoomIn } from 'lucide-react';
 
 export default function ExportMap() {
   const [activeHub, setActiveHub] = useState(null);
@@ -13,111 +13,142 @@ export default function ExportMap() {
     { id: 'singapore', name: 'Singapore Port', region: 'Asia-Pacific', rice: 'PR11 & Sharbati Steam', transit: '6 Days (Ocean)', coords: { x: 145, y: 114 } },
   ];
 
+  const pillars = [
+    {
+      title: 'Sustainable growth',
+      desc: 'We promote organic agriculture practices, conserving water resources while scaling farming output.',
+      icon: <Leaf size={45} color="#13982e" />
+    },
+    {
+      title: 'Brand focus',
+      desc: 'Positioning Veer Brand Basmati Rice at the peak of global food chains with consistent specifications.',
+      icon: <Target size={45} color="#13982e" />
+    },
+    {
+      title: 'An expanding Footprints',
+      desc: 'Venturing into new European and North American retail networks, bringing the finest grains to all.',
+      icon: <ZoomIn size={45} color="#13982e" />
+    }
+  ];
+
   return (
-    <section id="exports" className="section-padding exports-section" style={{ background: 'var(--surface-color)' }}>
-      <div className="container">
-        {/* Section Header */}
-        <div className="section-header">
-          <span className="tag">Global Footprint</span>
-          <h2>Exporting Pure Quality Worldwide</h2>
-          <p>
-            Veer Rice Mills maintains major shipping lanes to over 40+ countries. We handle all logistics, phytosanitary checks, and customs sealing.
-          </p>
-        </div>
-
-        <div className="grid-2" style={{ alignItems: 'center' }}>
-          {/* Info Details panel */}
-          <div className="export-info-panel animate-fade-in-up">
-            <h3 style={{ fontSize: '1.8rem', marginBottom: '1.5rem' }}>
-              Seamless Global <span className="gradient-accent-text">Supply Chains</span>
-            </h3>
-            <p style={{ color: 'var(--text-muted)', marginBottom: '2rem' }}>
-              Our dedicated logistics wing executes custom packing, loading verification, and phytosanitary certifications. We partner with top-tier ocean carriers (Maersk, MSC, CMA CGM) to ensure punctual container delivery.
-            </p>
-
-            <div className="shipping-capabilities" style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-              <div className="cap-item glass-panel" style={{ display: 'flex', gap: '1rem', padding: '1.25rem', borderRadius: '16px' }}>
-                <Ship size={24} color="var(--accent-color)" />
-                <div>
-                  <h4 style={{ fontSize: '1.05rem', marginBottom: '0.25rem' }}>Custom Shipping Sealing</h4>
-                  <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Containers are sealed directly at our milling factory to prevent humidity or contamination during transit.</p>
-                </div>
-              </div>
-              
-              <div className="cap-item glass-panel" style={{ display: 'flex', gap: '1rem', padding: '1.25rem', borderRadius: '16px' }}>
-                <Globe size={24} color="var(--accent-color)" />
-                <div>
-                  <h4 style={{ fontSize: '1.05rem', marginBottom: '0.25rem' }}>Export Customs Clearance</h4>
-                  <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Full documentation package, including Certificate of Origin, Phytosanitary Certificate, and Fumigation treatment reports.</p>
-                </div>
-              </div>
+    <div id="exports" style={{ background: '#ffffff' }}>
+      
+      {/* Global Footprints section */}
+      <section style={{ padding: '6rem 0', background: '#f7f5f2' }}>
+        <div className="container">
+          
+          <div className="section-header" style={{ textAlign: 'center', marginBottom: '4rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', justifyContent: 'center', marginBottom: '0.5rem' }}>
+              <img src="/images/Logo.jpeg" width="35px" alt="icon" style={{ borderRadius: '50%' }} />
+              <span style={{ color: 'var(--primary-color)', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '1px' }}>
+                Our Global Footprints
+              </span>
             </div>
+            <h2 style={{ fontSize: '2.5rem', fontWeight: '800', fontFamily: 'var(--font-heading)', color: 'var(--text-bright)' }}>
+              EXPORTING VALUE &amp; QUALITY <br /> TO WIDESPREAD GLOBAL HUBS
+            </h2>
           </div>
 
-          {/* Interactive World Map SVG */}
-          <div className="export-map-visual">
-            <div className="map-card glass-panel" style={{ padding: '1.5rem', borderRadius: '24px', position: 'relative' }}>
-              <div className="map-title-bar" style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1rem', fontSize: '0.85rem' }}>
-                <span style={{ fontWeight: '600' }}>Global Distribution Map</span>
-                <span style={{ color: 'var(--accent-color)', fontWeight: '500' }}>● Active Shipping Routes</span>
+          <div className="grid-2" style={{ gap: '3rem', alignItems: 'center' }}>
+            
+            {/* Left Block */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+              <div>
+                <h3 style={{ fontSize: '1.8rem', fontWeight: '800', fontFamily: 'var(--font-heading)', color: 'var(--text-bright)', marginBottom: '1rem' }}>
+                  Supplying Over 42+ Countries <br /> Across Diverse Continents
+                </h3>
+                <p style={{ fontSize: '1.05rem', color: '#555555', lineHeight: '1.6' }}>
+                  Our logistics partners operate active trade routes directly to Middle East hubs, European central ports, and key retail storage chains in North America.
+                </p>
               </div>
-              
-              <div className="svg-container" style={{ position: 'relative' }}>
-                {/* World Map Outline SVG */}
-                <svg viewBox="0 0 200 150" className="world-map-svg" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', height: 'auto', background: 'rgba(0,0,0,0.1)', borderRadius: '12px' }}>
-                  {/* Basic representations of world land masses for styling */}
-                  {/* Americas */}
-                  <path d="M 20 40 Q 30 35 45 45 T 50 80 Q 40 100 45 120 L 35 140 L 25 110 Z" fill="var(--border-color)" opacity="0.3" />
-                  {/* Eurasia & Africa */}
-                  <path d="M 70 30 Q 90 20 120 25 T 160 30 Q 180 50 170 70 L 150 110 Q 140 130 150 140" fill="var(--border-color)" opacity="0.3" />
-                  <path d="M 70 70 Q 90 65 110 80 T 115 110 Q 100 130 90 140 L 80 120 Z" fill="var(--border-color)" opacity="0.2" />
 
-                  {/* India (Origin Point) */}
-                  <circle cx="125" cy="85" r="3.5" fill="var(--accent-bright)" />
-                  <circle cx="125" cy="85" r="8" fill="none" stroke="var(--accent-color)" strokeWidth="1" className="ping-animation" style={{ transformOrigin: '125px 85px' }} />
-
-                  {/* Active Shipping Hubs */}
-                  {hubs.map((hub) => (
-                    <g 
-                      key={hub.id}
-                      onMouseEnter={() => setActiveHub(hub)}
-                      onMouseLeave={() => setActiveHub(null)}
-                      style={{ cursor: 'pointer' }}
-                    >
-                      {/* Connection Line from India */}
-                      <path 
-                        d={`M 125 85 Q ${(125 + hub.coords.x) / 2} ${(85 + hub.coords.y) / 2 - 10} ${hub.coords.x} ${hub.coords.y}`}
-                        fill="none"
-                        stroke={activeHub?.id === hub.id ? 'var(--accent-color)' : 'var(--border-color)'}
-                        strokeWidth={activeHub?.id === hub.id ? '1.5' : '0.75'}
-                        strokeDasharray="3 3"
-                      />
-                      
-                      {/* Hub Circle dot */}
-                      <circle 
-                        cx={hub.coords.x}
-                        cy={hub.coords.y}
-                        r={activeHub?.id === hub.id ? '4' : '2.5'}
-                        fill={activeHub?.id === hub.id ? 'var(--accent-bright)' : 'var(--text-muted)'}
-                        style={{ transition: 'all 0.2s' }}
-                      />
-                    </g>
-                  ))}
-                </svg>
-
-                {/* Hover overlay information */}
-                {activeHub && (
-                  <div className="map-tooltip glass-panel animate-fade-in-up" style={{ position: 'absolute', top: '10px', left: '10px', padding: '0.75rem 1rem', borderRadius: '12px', zIndex: 10, maxWidth: '200px' }}>
-                    <h4 style={{ fontSize: '0.9rem', color: 'var(--accent-color)', marginBottom: '0.25rem' }}>{activeHub.name}</h4>
-                    <p style={{ fontSize: '0.75rem', margin: '2px 0' }}><strong>Export Grains:</strong> {activeHub.rice}</p>
-                    <p style={{ fontSize: '0.75rem', margin: '2px 0', color: 'var(--text-muted)' }}><strong>Transit:</strong> {activeHub.transit}</p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
+                  <div style={{ background: '#eaf5eb', padding: '12px', borderRadius: '15px' }}>
+                    <Globe size={24} color="#13982e" />
                   </div>
-                )}
+                  <div>
+                    <h4 style={{ fontSize: '1.05rem', fontWeight: '700', color: 'var(--text-bright)', marginBottom: '0.25rem' }}>Customs Clearance Documentation</h4>
+                    <p style={{ fontSize: '0.85rem', color: '#666666', margin: 0 }}>Full documentation package, including Certificate of Origin, Phytosanitary Certificate, and Fumigation treatment reports.</p>
+                  </div>
+                </div>
               </div>
             </div>
+
+            {/* Map image overlay */}
+            <div style={{ position: 'relative', background: '#eaf4eb', borderRadius: '20px', padding: '1.5rem', border: '1px solid #d4ebd7', overflow: 'hidden' }}>
+              <img 
+                src="/images/export_map.png" 
+                alt="Export Destinations Map" 
+                style={{ 
+                  width: '100%', 
+                  height: 'auto', 
+                  borderRadius: '10px',
+                  objectFit: 'contain'
+                }} 
+              />
+              
+              {/* Optional interactive markers */}
+              {hubs.map((hub) => (
+                <div 
+                  key={hub.id}
+                  style={{
+                    position: 'absolute',
+                    left: `${hub.coords.x / 2}%`,
+                    top: `${hub.coords.y / 1.5}%`,
+                    width: '10px',
+                    height: '10px',
+                    borderRadius: '50%',
+                    background: '#13982e',
+                    border: '2px solid #ffffff',
+                    cursor: 'pointer',
+                    boxShadow: '0 0 10px rgba(19, 152, 46, 0.8)'
+                  }}
+                  title={`${hub.name} (${hub.rice})`}
+                />
+              ))}
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* Key Pillars Section (Haryana style) */}
+      <section style={{ padding: '6rem 0', background: '#ffffff', borderBottom: '1px solid #eeeeee' }}>
+        <div className="container">
+          <div className="grid-3" style={{ gap: '2rem' }}>
+            {pillars.map((pillar, idx) => (
+              <div 
+                key={idx} 
+                style={{
+                  background: '#f7f5f2',
+                  borderRadius: '30px',
+                  padding: '2.5rem 1.5rem',
+                  textAlign: 'center',
+                  boxShadow: '0 8px 24px rgba(0,0,0,0.02)',
+                  border: '1px solid rgba(0,0,0,0.03)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  gap: '1.25rem'
+                }}
+              >
+                <div style={{ width: '80px', height: '80px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#ffffff', borderRadius: '50%', boxShadow: 'var(--shadow-sm)' }}>
+                  {pillar.icon}
+                </div>
+                <h4 style={{ fontSize: '1.25rem', fontWeight: '800', fontFamily: 'var(--font-heading)', color: 'var(--text-bright)', margin: 0 }}>
+                  {pillar.title}
+                </h4>
+                <p style={{ fontSize: '0.9rem', color: '#555555', lineHeight: '1.6', margin: 0 }}>
+                  {pillar.desc}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+    </div>
   );
 }

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Sun, Moon, Sparkles } from 'lucide-react';
+import { Menu, X, Sun, Moon } from 'lucide-react';
 
 export default function Header({ isDarkMode, setIsDarkMode }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,7 +10,6 @@ export default function Header({ isDarkMode, setIsDarkMode }) {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
 
-      // Section tracking for active state
       const sections = ['home', 'about', 'milling', 'products', 'exports', 'calculator', 'contact'];
       const scrollPosition = window.scrollY + 120;
 
@@ -33,19 +32,18 @@ export default function Header({ isDarkMode, setIsDarkMode }) {
 
   const navItems = [
     { label: 'Home', target: 'home' },
-    { label: 'Our Heritage', target: 'about' },
-    { label: 'Milling Tech', target: 'milling' },
-    { label: 'Our Grains', target: 'products' },
-    { label: 'Global Scale', target: 'exports' },
-    { label: 'Rice Calculator', target: 'calculator' },
-    { label: 'Inquiry', target: 'contact' },
+    { label: 'About us', target: 'about' },
+    { label: 'Products', target: 'products' },
+    { label: 'Our Brand', target: 'exports' },
+    { label: 'Blogs', target: 'milling' },
+    { label: 'Contact', target: 'contact' },
   ];
 
   const handleNavClick = (target) => {
     setIsOpen(false);
     const element = document.getElementById(target);
     if (element) {
-      const offset = 80; // height of sticky header
+      const offset = 80;
       const bodyRect = document.body.getBoundingClientRect().top;
       const elementRect = element.getBoundingClientRect().top;
       const elementPosition = elementRect - bodyRect;
@@ -59,82 +57,150 @@ export default function Header({ isDarkMode, setIsDarkMode }) {
   };
 
   return (
-    <header className={`header ${isScrolled ? 'header-scrolled' : ''}`}>
-      <div className="container nav-container">
-        {/* Brand Logo */}
-        <a href="#home" onClick={(e) => { e.preventDefault(); handleNavClick('home'); }} className="logo-wrap">
-          <img src="/images/Logo.jpeg" alt="Veer Rice Mills Logo" style={{ width: '36px', height: '36px', borderRadius: '50%', objectFit: 'cover', border: '1.5px solid var(--accent-color)' }} />
-          <div className="logo-text">
-            <span className="logo-title">VEER</span>
-            <span className="logo-sub">RICE MILLS</span>
+    <div className="header-wrapper">
+      {/* Topbar (Haryana Rice Mill style: White Background, Green Icons) */}
+      <div className="topbar">
+        <div className="container topbar-inner" style={{ maxWidth: '100%', padding: '0 2rem' }}>
+          <div className="topbar-left">
+            <span className="topbar-info-item">
+              <span className="topbar-icon" style={{ color: '#13982e', marginRight: '6px' }}>📍</span> 
+              NH-44, GT Road, Near Grain Market, Karnal - 132001, Haryana, India
+            </span>
+            <span className="topbar-info-item">
+              <span className="topbar-icon" style={{ color: '#13982e', marginRight: '6px' }}>✉️</span> 
+              info@veerricemills.com
+            </span>
           </div>
-        </a>
+          <div className="topbar-right" style={{ display: 'flex', alignItems: 'center', gap: '1.2rem' }}>
+            {/* Custom Multi-Language Selector Widget */}
+            <div className="google-translate-container" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <span style={{ fontSize: '0.8rem', fontWeight: '800', color: '#13982e', textTransform: 'uppercase' }}>🌐 Translate:</span>
+              <select
+                onChange={(e) => {
+                  const langCode = e.target.value;
+                  document.cookie = `googtrans=/en/${langCode}; path=/`;
+                  document.cookie = `googtrans=/en/${langCode}; path=/; domain=.${window.location.hostname}`;
+                  
+                  const selectEl = document.querySelector('.goog-te-combo');
+                  if (selectEl) {
+                    selectEl.value = langCode;
+                    selectEl.dispatchEvent(new Event('change'));
+                  } else {
+                    window.location.reload();
+                  }
+                }}
+                style={{
+                  padding: '5px 12px',
+                  borderRadius: '20px',
+                  border: '2px solid #13982e',
+                  background: '#ffffff',
+                  color: '#13982e',
+                  fontWeight: '800',
+                  fontSize: '0.85rem',
+                  cursor: 'pointer',
+                  outline: 'none',
+                  boxShadow: '0 2px 6px rgba(0,0,0,0.08)'
+                }}
+              >
+                <option value="en">🇬🇧 English</option>
+                <option value="ar">🇸🇦 Arabic (العربية)</option>
+                <option value="zh-CN">🇨🇳 Chinese (中文)</option>
+                <option value="es">🇪🇸 Spanish (Español)</option>
+                <option value="ru">🇷🇺 Russian (Русский)</option>
+                <option value="fr">🇫🇷 French (Français)</option>
+                <option value="hi">🇮🇳 Hindi (हिन्दी)</option>
+                <option value="de">🇩🇪 German (Deutsch)</option>
+              </select>
+              
+              {/* Native Google Translate Hidden Mounting Anchor */}
+              <div id="google_translate_element" style={{ display: 'inline-block' }}></div>
+            </div>
+            
+            {/* Social Links */}
+            <div className="topbar-socials">
+              <a href="https://facebook.com" target="_blank" rel="noreferrer" className="topbar-social-btn">f</a>
+              <a href="https://instagram.com" target="_blank" rel="noreferrer" className="topbar-social-btn">📸</a>
+            </div>
 
-        {/* Desktop Navigation */}
-        <nav className="desktop-nav">
-          {navItems.map((item) => (
-            <a
-              key={item.target}
-              href={`#${item.target}`}
-              onClick={(e) => { e.preventDefault(); handleNavClick(item.target); }}
-              className={`nav-link ${activeSection === item.target ? 'nav-link-active' : ''}`}
+            {/* Dark Mode Switcher */}
+            <button 
+              onClick={() => setIsDarkMode(!isDarkMode)} 
+              className="theme-toggle-btn-topbar"
+              aria-label={isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+              style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#13982e', display: 'flex', alignItems: 'center' }}
             >
-              {item.label}
-              {activeSection === item.target && <span className="active-dot" />}
-            </a>
-          ))}
-        </nav>
-
-        {/* Action Controls */}
-        <div className="header-controls">
-          <button 
-            onClick={() => setIsDarkMode(!isDarkMode)} 
-            className="theme-toggle-btn"
-            aria-label={isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
-          >
-            {isDarkMode ? <Sun size={18} /> : <Moon size={18} />}
-          </button>
-          
-          <button 
-            onClick={() => handleNavClick('contact')} 
-            className="btn btn-accent header-cta-btn"
-          >
-            <Sparkles size={16} />
-            <span>Get Quote</span>
-          </button>
-
-          {/* Mobile Menu Icon */}
-          <button onClick={() => setIsOpen(!isOpen)} className="mobile-menu-btn" aria-label="Toggle menu">
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+              {isDarkMode ? <Sun size={14} /> : <Moon size={14} />}
+            </button>
+          </div>
         </div>
       </div>
 
-      {/* Mobile Drawer */}
-      {isOpen && (
-        <div className="mobile-drawer">
-          <nav className="mobile-nav">
+      <header className={`header ${isScrolled ? 'header-scrolled' : ''}`}>
+        <div className="nav-container-custom" style={{ display: 'flex', alignItems: 'stretch', justifyContent: 'space-between', height: '90px', padding: 0, width: '100%' }}>
+          
+          {/* Brand Logo - Tall White Hanging Box (Haryana Rice Mill style) */}
+          <div className="logo-box-wrap">
+            <a href="#home" onClick={(e) => { e.preventDefault(); handleNavClick('home'); }} className="logo-wrap-custom">
+              <img src="/images/Logo.jpeg" alt="Veer Rice Mills Logo" className="logo-img-large" />
+              <div className="logo-text-custom">
+                <span className="logo-title-custom">VEER RICE MILL</span>
+                <span className="logo-sub-custom">Basmati Rice Manufacturer, Supplier & Exporter</span>
+              </div>
+            </a>
+          </div>
+
+          {/* Desktop Navigation - Inside Green Bar */}
+          <nav className="desktop-nav-custom">
             {navItems.map((item) => (
               <a
                 key={item.target}
                 href={`#${item.target}`}
                 onClick={(e) => { e.preventDefault(); handleNavClick(item.target); }}
-                className={`mobile-nav-link ${activeSection === item.target ? 'mobile-nav-link-active' : ''}`}
+                className={`nav-link-custom ${activeSection === item.target ? 'nav-link-custom-active' : ''}`}
               >
                 {item.label}
               </a>
             ))}
-            <button 
-              onClick={() => handleNavClick('contact')} 
-              className="btn btn-accent" 
-              style={{ width: '100%', marginTop: '1rem' }}
-            >
-              <Sparkles size={16} />
-              <span>Get Quote</span>
-            </button>
           </nav>
+
+          {/* Action Controls & Helpline Black Box */}
+          <div className="header-controls-custom">
+            {/* Dark green/black Helpline Panel */}
+            <div className="header-helpline-custom">
+              <div className="helpline-icon-custom-wrap">
+                <span className="helpline-phone-icon">📞</span>
+              </div>
+              <div className="helpline-info">
+                <span className="helpline-label">Call us on</span>
+                <a href="tel:+919876543210" className="helpline-number">+91 98765 43210</a>
+              </div>
+            </div>
+
+            {/* Mobile Menu Toggle */}
+            <button onClick={() => setIsOpen(!isOpen)} className="mobile-menu-btn-custom" aria-label="Toggle menu">
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
-      )}
-    </header>
+
+        {/* Mobile Drawer */}
+        {isOpen && (
+          <div className="mobile-drawer-custom">
+            <nav className="mobile-nav-custom">
+              {navItems.map((item) => (
+                <a
+                  key={item.target}
+                  href={`#${item.target}`}
+                  onClick={(e) => { e.preventDefault(); handleNavClick(item.target); }}
+                  className={`mobile-nav-link-custom ${activeSection === item.target ? 'mobile-nav-link-custom-active' : ''}`}
+                >
+                  {item.label}
+                </a>
+              ))}
+            </nav>
+          </div>
+        )}
+      </header>
+    </div>
   );
 }

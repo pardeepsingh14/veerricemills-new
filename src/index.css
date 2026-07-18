@@ -2,8 +2,8 @@
 
 :root {
   /* Common variables */
-  --font-heading: 'Cinzel', serif;
-  --font-body: 'Outfit', sans-serif;
+  --font-heading: 'DM Sans', sans-serif;
+  --font-body: 'Work Sans', sans-serif;
   --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-normal: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
@@ -20,40 +20,40 @@
   --primary-sat: 35%;
   --primary-lightness: 18%;
 
-  /* Dark Theme (Fallback - Luxury Obsidian Emerald) */
-  --bg-color: #06100a;
-  --surface-color: #0d1e14;
-  --surface-hover: #142a1d;
-  --surface-glass: rgba(6, 16, 10, 0.75);
-  --border-color: rgba(197, 154, 95, 0.18);
-  --text-color: #e5e9e6;
-  --text-muted: #95a399;
-  --text-bright: #f0f4f1;
-  --primary-color: #122c1b;
-  --primary-accent: #1c452b;
-  --accent-color: #d4af37; /* Metallic Gold */
-  --accent-bright: #f3e5ab;
-  --glass-blur: blur(24px);
-  --selection-bg: rgba(212, 175, 55, 0.2);
-  --hero-glow: radial-gradient(circle at 50% -20%, rgba(212, 175, 55, 0.08), transparent 70%);
-}
-
-/* Light Theme (Default rebrand - Luxury Warm Linen) */
-:root.light-mode {
-  --bg-color: #fbfaf5;
-  --surface-color: #f3f0e6;
-  --surface-hover: #e9e4d5;
-  --surface-glass: rgba(251, 250, 245, 0.85);
-  --border-color: rgba(18, 44, 27, 0.12);
-  --text-color: #122c1b;
-  --text-muted: #576d5e;
-  --text-bright: #0a1b10;
+  /* Dark Theme (Luxury Dark Obsidian & Gold) */
+  --bg-color: #050706;
+  --surface-color: #0c0f0d;
+  --surface-hover: #121714;
+  --surface-glass: rgba(5, 7, 6, 0.85);
+  --border-color: rgba(212, 175, 55, 0.2);
+  --text-color: #e2e8f0;
+  --text-muted: #94a3b8;
+  --text-bright: #f8fafc;
   --primary-color: #122c1b;
   --primary-accent: #1e4b2e;
-  --accent-color: #b5894b; /* Editorial Muted Gold */
+  --accent-color: #dfb743; /* Bright Glowing Gold */
+  --accent-bright: #f6e093;
+  --glass-blur: blur(24px);
+  --selection-bg: rgba(223, 183, 67, 0.2);
+  --hero-glow: radial-gradient(circle at 50% -20%, rgba(223, 183, 67, 0.08), transparent 70%);
+}
+
+/* Light Theme (Default rebrand - Luxury Forest Green & Sand) */
+:root.light-mode {
+  --bg-color: #f7f5f2;
+  --surface-color: #ffffff;
+  --surface-hover: #f1ede8;
+  --surface-glass: rgba(255, 255, 255, 0.95);
+  --border-color: rgba(31, 78, 61, 0.12);
+  --text-color: #222222;
+  --text-muted: #55665c;
+  --text-bright: #133c2b;
+  --primary-color: #1f4e3d;
+  --primary-accent: #2e6b54;
+  --accent-color: #c59a5f; /* Golden Sand */
   --accent-bright: #d4af37;
-  --selection-bg: rgba(18, 44, 27, 0.1);
-  --hero-glow: radial-gradient(circle at 50% -20%, rgba(181, 137, 75, 0.12), transparent 70%);
+  --selection-bg: rgba(31, 78, 61, 0.1);
+  --hero-glow: radial-gradient(circle at 50% -20%, rgba(197, 154, 95, 0.08), transparent 70%);
 }
 
 /* Reset and Global Styles */
@@ -1410,15 +1410,15 @@ select.form-input {
   }
 }
 
-/* Floating Rice Grains Background */
-.floating-grains-bg {
-  position: absolute;
+/* Global Floating Background */
+.global-floating-bg {
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   overflow: hidden;
-  z-index: 1; /* Place above background grid but below text */
+  z-index: 1; /* Place behind text content */
   pointer-events: none;
 }
 
@@ -1427,20 +1427,45 @@ select.form-input {
   background: radial-gradient(circle, #ffffff 60%, var(--accent-color) 100%);
   border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; /* Rice grain shape */
   opacity: 0;
-  animation: float-around 15s linear infinite;
+  animation: float-around 18s linear infinite;
   box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);
+}
+
+.floating-img-item {
+  position: absolute;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  opacity: 0;
+  animation: float-around 25s linear infinite;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+  background: var(--surface-color);
+}
+
+.floating-img-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.1; /* Extreme subtlety */
+  filter: grayscale(40%) contrast(110%);
+  transition: opacity var(--transition-normal);
+}
+
+:root.light-mode .floating-img-item img {
+  opacity: 0.07;
 }
 
 @keyframes float-around {
   0% {
-    transform: translateY(110vh) translateX(0) rotate(0deg);
+    transform: translateY(105vh) translateX(0) rotate(0deg);
     opacity: 0;
   }
   10% {
-    opacity: 0.25;
+    opacity: 0.18;
   }
   90% {
-    opacity: 0.25;
+    opacity: 0.18;
   }
   100% {
     transform: translateY(-10vh) translateX(100px) rotate(360deg);
@@ -1801,4 +1826,565 @@ h1, h2, h3, h4 {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--accent-bright);
 }
+
+/* ==========================================
+   HARYANA RICE MILL STYLE OVERLAY (VEER RICE MILLS INTEGRATION)
+   ========================================== */
+
+.header-wrapper {
+  width: 100%;
+  position: relative;
+  z-index: 1100;
+}
+
+/* White background topbar with green details */
+.topbar {
+  background: #ffffff !important;
+  color: #222222 !important;
+  font-size: 0.8rem;
+  padding: 8px 0;
+  border-bottom: 1px solid #e2e8f0;
+  font-family: var(--font-body);
+}
+
+.topbar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.topbar-left {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.topbar-info-item {
+  display: flex;
+  align-items: center;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.topbar-socials {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.topbar-social-btn {
+  background: #13982e;
+  color: #ffffff !important;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: opacity var(--transition-fast);
+}
+
+.topbar-social-btn:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .topbar {
+    display: none;
+  }
+}
+
+/* Main Header bar */
+.header {
+  position: relative;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  box-shadow: var(--shadow-sm);
+  z-index: 1000;
+}
+
+.header-scrolled {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: var(--shadow-md);
+}
+
+/* Tall hanging white logo box */
+.logo-box-wrap {
+  background: #ffffff;
+  padding: 10px 24px;
+  height: 115px; /* Extends below the 90px header height */
+  position: absolute;
+  top: 0;
+  left: 0; /* Aligned to the very left edge of the screen */
+  z-index: 1050;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-bottom-left-radius: 0; /* Sharp corner (Haryana style) */
+  border-bottom-right-radius: 0; /* Sharp corner (Haryana style) */
+  display: flex;
+  align-items: center;
+  border-right: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+  border-left: none;
+  border-top: none;
+  width: 310px; /* Aligns with menu margin */
+}
+
+.logo-wrap-custom {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.logo-img-large {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--accent-color);
+  flex-shrink: 0;
+}
+
+.logo-text-custom {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.logo-title-custom {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #122c1b;
+  line-height: 1.1;
+  letter-spacing: 0.5px;
+}
+
+.logo-sub-custom {
+  font-family: var(--font-body);
+  font-size: 0.58rem;
+  font-weight: 600;
+  color: var(--accent-color);
+  margin-top: 3px;
+  line-height: 1.25;
+  max-width: 160px;
+}
+
+/* Solid green navigation bar */
+.desktop-nav-custom {
+  display: flex;
+  align-items: center;
+  background: #13982e;
+  height: 90px;
+  margin-left: 310px; /* Safe distance to clear hanging logo box */
+  padding: 0 2rem;
+  gap: 1.75rem;
+  flex-grow: 1;
+}
+
+.nav-link-custom {
+  font-family: var(--font-body);
+  font-size: 1.15rem; /* Larger menu items */
+  font-weight: 900; /* Bold menu items */
+  color: #ffffff !important;
+  text-transform: capitalize;
+  position: relative;
+  padding: 0.5rem 0;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.nav-link-custom:hover {
+  color: #061e0f !important; /* Dark green hover */
+}
+
+/* Action Controls & Helpline black box */
+.header-controls-custom {
+  display: flex;
+  align-items: center;
+  background: #092214;
+  height: 90px;
+  padding: 0 20px;
+  gap: 10px;
+}
+
+.header-helpline-custom {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  text-align: left;
+}
+
+.helpline-icon-custom-wrap {
+  background: #13982e;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.helpline-phone-icon {
+  font-size: 0.9rem;
+  color: #ffffff;
+}
+
+.helpline-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.helpline-label {
+  font-size: 0.72rem; /* Larger helpline text */
+  font-weight: 700;
+  color: #92bfa4;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1;
+}
+
+.helpline-number {
+  font-size: 1.15rem; /* Larger helpline number */
+  font-weight: 900; /* Bold helpline number */
+  color: #ffffff !important;
+  text-decoration: none;
+  margin-top: 2px;
+  line-height: 1.2;
+}
+
+.theme-toggle-btn-custom {
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color var(--transition-fast);
+}
+
+.theme-toggle-btn-custom:hover {
+  color: var(--accent-color);
+}
+
+.mobile-menu-btn-custom {
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Mobile responsive media queries */
+@media (max-width: 1024px) {
+  .logo-box-wrap {
+    height: 90px;
+    padding: 10px 15px;
+    left: 1rem;
+  }
+  .logo-img-large {
+    width: 48px;
+    height: 48px;
+  }
+  .logo-title-custom {
+    font-size: 1.15rem;
+  }
+  .logo-sub-custom {
+    display: none;
+  }
+  .desktop-nav-custom {
+    display: none;
+  }
+  .header-helpline-custom {
+    display: none;
+  }
+  .mobile-menu-btn-custom {
+    display: flex;
+  }
+}
+
+/* Mobile drawer navigation list styling */
+.mobile-drawer-custom {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #13982e;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-lg);
+  z-index: 1000;
+  border-bottom: 3px solid #092214;
+}
+
+.mobile-nav-custom {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: left;
+}
+
+.mobile-nav-link-custom {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  padding: 0.5rem 0;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Custom Cursor Dot & Trailing Ring (Haryana Style) */
+.custom-cursor-dot {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background-color: #13982e;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+}
+
+.custom-cursor-ring {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  border: 2px solid rgba(19, 152, 46, 0.5);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+}
+
+/* Hide default cursor on desktop for custom pointer experience */
+@media (min-width: 769px) {
+  body, a, button, select, input, textarea, select option {
+    cursor: none !important;
+  }
+}
+
+/* Floating WhatsApp Button (Bottom-Left Corner) */
+.whatsapp-float-btn {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem; /* Aligned to bottom-left corner */
+  z-index: 999;
+  width: 60px;
+  height: 60px;
+  background-color: #25d366;
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+  text-decoration: none;
+}
+
+.whatsapp-float-btn:hover {
+  transform: scale(1.1);
+}
+
+.whatsapp-float-btn img {
+  width: 32px;
+  height: 32px;
+}
+
+.whatsapp-tooltip {
+  position: absolute;
+  left: 70px;
+  background: #092214;
+  color: #ffffff;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-family: var(--font-body);
+  font-weight: 700;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--shadow-sm);
+}
+
+.whatsapp-float-btn:hover .whatsapp-tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Hero Slider Animations & Layout */
+.hero-slider-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-slide {
+  transition: opacity 1s ease-in-out;
+}
+
+.slide-title {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.slide-subtitle {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
+}
+
+.active-slide .slide-title {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.active-slide .slide-subtitle {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Floating Rice Bag Micro-Animations */
+@keyframes floatBag {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.hero-bag-item {
+  animation: floatBag 4s ease-in-out infinite;
+  transition: transform 0.3s ease;
+}
+
+.hero-bag-item:hover {
+  transform: scale(1.05) translateY(-12px) !important;
+}
+
+.bag-classic-1 { animation-delay: 0s; }
+.bag-sella-1 { animation-delay: 0.8s; }
+.bag-classic-2 { animation-delay: 1.6s; }
+.bag-sella-2 { animation-delay: 2.4s; }
+.bag-classic-3 { animation-delay: 3.2s; }
+
+/* Cooked Rice Bowl Container Styles */
+@keyframes floatBowl {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0px); }
+}
+
+.cooked-rice-bowl-container {
+  animation: floatBowl 5s ease-in-out infinite;
+}
+
+/* Hover effect on arrow buttons */
+.hero-arrow-btn:hover {
+  background: rgba(255, 255, 255, 0.25) !important;
+  border-color: #ffffff !important;
+  transform: translateY(-50%) scale(1.08) !important;
+}
+
+/* Floating Call Button (Bottom-Right Corner) */
+.call-float-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem; /* Opposite to WhatsApp button on the left */
+  z-index: 999;
+  width: 60px;
+  height: 60px;
+  background-color: #f1c40f; /* Golden yellow */
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.call-float-btn:hover {
+  transform: scale(1.1);
+  background-color: #f39c12;
+}
+
+.call-float-btn span {
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+
+.call-tooltip {
+  position: absolute;
+  right: 70px;
+  background: #092214;
+  color: #ffffff;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-family: var(--font-body);
+  font-weight: 700;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--shadow-sm);
+}
+
+.call-float-btn:hover .call-tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Falling Rice Grains Particle Animation (Chawal Girte Hue) */
+@keyframes fallGrains {
+  0% {
+    transform: translateY(-30px) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.85;
+  }
+  90% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateY(850px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.falling-rice-grain {
+  position: absolute;
+  top: -30px;
+  background: linear-gradient(135deg, #ffffff 0%, #f7e6a7 100%);
+  border-radius: 40%;
+  pointer-events: none;
+  z-index: 4;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+  animation: fallGrains linear infinite;
+}
+
+
+
+
+
 

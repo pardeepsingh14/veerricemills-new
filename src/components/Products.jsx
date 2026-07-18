@@ -240,8 +240,30 @@ export default function Products() {
             return (
               <div className="product-card glass-panel" key={product.id}>
                 {/* Visual Thumbnail */}
-                <div className="product-thumbnail" style={{ height: '180px', overflow: 'hidden', borderRadius: '12px', marginBottom: '1.25rem', border: '1px solid var(--border-color)' }}>
+                <div className="product-thumbnail" style={{ position: 'relative', height: '180px', overflow: 'hidden', borderRadius: '12px', marginBottom: '1.25rem', border: '1px solid var(--border-color)' }}>
                   <img src={product.image || "/basmati_grains.png"} alt={product.name} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.4s ease' }} className="product-thumb-img" />
+                  
+                  {/* Branded Watermark Overlay (Veer Brand Basmati Rice) */}
+                  <div className="product-image-watermark" style={{
+                    position: 'absolute',
+                    bottom: '8px',
+                    right: '8px',
+                    background: 'rgba(255, 255, 255, 0.95)',
+                    border: '1.5px solid #13982e',
+                    borderRadius: '30px',
+                    padding: '3px 10px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    boxShadow: '0 4px 10px rgba(0,0,0,0.1)',
+                    zIndex: 10,
+                    pointerEvents: 'none'
+                  }}>
+                    <img src="/images/Logo.jpeg" alt="Veer Logo" style={{ width: '14px', height: '14px', borderRadius: '50%', objectFit: 'cover' }} />
+                    <span style={{ fontSize: '0.62rem', fontWeight: '900', color: '#122c1b', letterSpacing: '0.5px', textTransform: 'uppercase', fontFamily: 'var(--font-body)' }}>
+                      Veer Brand
+                    </span>
+                  </div>
                 </div>
                 <div className="product-header">
                   <span className="product-tag">{product.tag}</span>
