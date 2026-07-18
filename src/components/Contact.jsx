@@ -18,27 +18,65 @@ export default function Contact() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const OWNER_EMAIL = 'pardeep.singh14@gmail.com';
+  const OWNER_WHATSAPP = '919467325777';
+
+  const getVarietyLabel = (val) => {
+    const map = {
+      '1121-steam': '1121 Steam Basmati',
+      'trad-basmati': 'Traditional Raw Basmati',
+      '1509-sella': '1509 Golden Sella',
+      'pr11-non': 'PR11 Non-Basmati',
+      'ir64-broken': 'IR64 5% Broken'
+    };
+    return map[val] || val;
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.quantity) {
-      alert('Please fill out the required fields.');
+      alert('Please fill out the required fields (Name, Email & Expected Volume).');
       return;
     }
     setLoading(true);
 
-    // Simulate submission delay
-    setTimeout(() => {
-      setLoading(false);
-      setSubmitted(true);
-      setFormData({
-        name: '',
-        email: '',
-        company: '',
-        variety: '1121-steam',
-        quantity: '',
-        message: ''
+    // ── Step 1: Send Email via FormSubmit.co (free, zero account needed) ──
+    try {
+      await fetch(`https://formsubmit.co/ajax/${OWNER_EMAIL}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          _subject: `🌾 New Export Inquiry from ${formData.name} — Veer Rice Mills`,
+          Name: formData.name,
+          Email: formData.email,
+          Company: formData.company || 'Not provided',
+          'Rice Variety': getVarietyLabel(formData.variety),
+          'Expected Volume': formData.quantity,
+          Message: formData.message || 'No additional message',
+          _captcha: 'false',
+          _template: 'table'
+        })
       });
-    }, 2000);
+    } catch (err) {
+      console.warn('Email send failed:', err);
+    }
+
+    // ── Step 2: Open WhatsApp with all inquiry details pre-filled ──
+    const waText = encodeURIComponent(
+      `🌾 *New Export Inquiry — Veer Rice Mills Website*\n\n` +
+      `👤 *Name:* ${formData.name}\n` +
+      `📧 *Email:* ${formData.email}\n` +
+      `🏢 *Company:* ${formData.company || 'Not provided'}\n` +
+      `🍚 *Rice Variety:* ${getVarietyLabel(formData.variety)}\n` +
+      `📦 *Expected Volume:* ${formData.quantity}\n` +
+      `💬 *Message:* ${formData.message || 'No additional message'}`
+    );
+    window.open(`https://wa.me/${OWNER_WHATSAPP}?text=${waText}`, '_blank');
+
+    // ── Step 3: Show success & reset form ──
+    setLoading(false);
+    setSubmitted(true);
+    setFormData({ name: '', email: '', company: '', variety: '1121-steam', quantity: '', message: '' });
   };
 
   return (
@@ -67,7 +105,7 @@ export default function Contact() {
                   <div style={{ background: 'var(--surface-hover)', border: '1px solid var(--border-color)', padding: '0.75rem', borderRadius: '50%', color: 'var(--accent-color)' }}><Phone size={20} /></div>
                   <div>
                     <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Call / WhatsApp Sales</span>
-                    <h4 style={{ fontSize: '1rem', color: 'var(--text-bright)' }}>+91 98765 43210 / +91 99988 77766</h4>
+                    <h4 style={{ fontSize: '1rem', color: 'var(--text-bright)' }}>+91 94673 25777</h4>
                   </div>
                 </div>
 
@@ -75,7 +113,7 @@ export default function Contact() {
                   <div style={{ background: 'var(--surface-hover)', border: '1px solid var(--border-color)', padding: '0.75rem', borderRadius: '50%', color: 'var(--accent-color)' }}><Mail size={20} /></div>
                   <div>
                     <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Email Inquiries</span>
-                    <h4 style={{ fontSize: '1rem', color: 'var(--text-bright)' }}>exports@veerricemills.com / info@veerricemills.com</h4>
+                    <h4 style={{ fontSize: '1rem', color: 'var(--text-bright)' }}>pardeep.singh14@gmail.com</h4>
                   </div>
                 </div>
 
@@ -103,7 +141,7 @@ export default function Contact() {
                 <CheckCircle2 size={64} color="#10b981" />
                 <h3 style={{ fontSize: '1.5rem', color: 'var(--text-bright)' }}>Enquiry Submitted Successfully</h3>
                 <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', maxWidth: '350px' }}>
-                  Thank you for contacting Veer Rice Mills. An export manager has been assigned to your query and will contact you shortly via email.
+                  Your inquiry has been sent to our team! ✅ You will receive a response on your email shortly. A WhatsApp message has also been opened for instant reply.
                 </p>
                 <button onClick={() => setSubmitted(false)} className="btn btn-secondary" style={{ padding: '0.6rem 1.5rem', fontSize: '0.85rem' }}>
                   Submit Another Inquiry
