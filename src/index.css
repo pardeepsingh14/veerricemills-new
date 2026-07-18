@@ -2383,6 +2383,225 @@ h1, h2, h3, h4 {
   animation: fallGrains linear infinite;
 }
 
+/* ==========================================================================
+   MOBILE & TABLET RESPONSIVE ENGINE (Max-width: 992px, 768px, 480px)
+   ========================================================================== */
+
+@media (max-width: 992px) {
+  .logo-img-large {
+    height: 65px !important;
+  }
+  .logo-title-custom {
+    font-size: 1.25rem !important;
+  }
+  .logo-sub-custom {
+    display: none !important;
+  }
+  .slide-title {
+    font-size: 2.5rem !important;
+  }
+  .slide-subtitle {
+    font-size: 1.1rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Topbar Mobile Cleanup */
+  .topbar-info {
+    font-size: 0.75rem !important;
+    white-space: normal !important;
+  }
+  .topbar-info-item:first-child {
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .topbar-right {
+    gap: 0.5rem !important;
+  }
+  .google-translate-container select {
+    font-size: 0.75rem !important;
+    padding: 3px 8px !important;
+  }
+
+  /* Header & Navigation Mobile Layout */
+  .nav-container-custom {
+    height: 70px !important;
+    padding: 0 0.5rem !important;
+  }
+
+  .logo-box-wrap {
+    height: 80px !important;
+    padding: 6px 12px !important;
+  }
+
+  .logo-wrap-custom {
+    gap: 8px !important;
+  }
+
+  .logo-img-large {
+    height: 50px !important;
+  }
+
+  .logo-title-custom {
+    font-size: 1.1rem !important;
+  }
+
+  .desktop-nav-custom {
+    display: none !important;
+  }
+
+  .header-helpline-custom {
+    display: none !important;
+  }
+
+  .mobile-menu-btn-custom {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    background: #092214;
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  /* Mobile Drawer Menu */
+  .mobile-drawer-custom {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: #092214;
+    border-top: 3px solid #f1c40f;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    padding: 1rem 0;
+    z-index: 999;
+  }
+
+  .mobile-nav-custom {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .mobile-nav-link-custom {
+    padding: 0.85rem 1.5rem;
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    transition: background 0.2s ease;
+  }
+
+  .mobile-nav-link-custom:hover,
+  .mobile-nav-link-custom-active {
+    background: rgba(241, 196, 15, 0.15);
+    color: #f1c40f;
+  }
+
+  /* Hero Slider Mobile Adaptation */
+  .hero-slider-section {
+    height: 85vh !important;
+    min-height: 550px !important;
+  }
+
+  .slide-title {
+    font-size: 1.8rem !important;
+    line-height: 1.25 !important;
+  }
+
+  .slide-subtitle {
+    font-size: 0.95rem !important;
+    margin-top: 0.5rem !important;
+  }
+
+  .slide-text-wrapper {
+    margin-bottom: 1rem !important;
+  }
+
+  .slide-bags-row {
+    gap: 0.5rem !important;
+    height: 200px !important;
+    margin-top: 1rem !important;
+  }
+
+  .hero-bag-item {
+    max-height: 160px !important;
+  }
+
+  .bag-classic-1,
+  .bag-classic-3 {
+    display: none !important;
+  }
+
+  .slide-cooked-row {
+    gap: 1rem !important;
+    margin-top: 1rem !important;
+  }
+
+  .cooked-rice-bowl-container {
+    width: 150px !important;
+    height: 150px !important;
+  }
+
+  .slide-cooked-row .hero-bag-item {
+    height: 160px !important;
+  }
+
+  .hero-arrow-btn {
+    width: 38px !important;
+    height: 38px !important;
+  }
+  
+  .prev-arrow { left: 0.5rem !important; }
+  .next-arrow { right: 0.5rem !important; }
+
+  /* Floating Buttons Mobile Position */
+  .whatsapp-float-btn {
+    bottom: 1.2rem !important;
+    left: 1.2rem !important;
+    width: 50px !important;
+    height: 50px !important;
+  }
+
+  .call-float-btn {
+    bottom: 1.2rem !important;
+    right: 1.2rem !important;
+    width: 50px !important;
+    height: 50px !important;
+  }
+
+  /* General Mobile Grid & Spacing Adaptation */
+  .about-container,
+  .milling-container,
+  .products-grid {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .slide-title {
+    font-size: 1.45rem !important;
+  }
+  .slide-subtitle {
+    font-size: 0.85rem !important;
+  }
+  .bag-sella-1,
+  .bag-sella-2 {
+    display: none !important;
+  }
+  .bag-classic-2 {
+    height: 200px !important;
+  }
+}
+
+
 
 
 
