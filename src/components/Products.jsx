@@ -7,19 +7,7 @@ export default function Products() {
   const [showCompareModal, setShowCompareModal] = useState(false);
 
   const products = [
-    {
-      id: '1121-golden-sella',
-      name: '1121 Golden Sella Basmati Rice',
-      category: 'basmati',
-      length: '8.35 mm',
-      elongation: '2.0x',
-      moisture: '12.0%',
-      broken: '< 1%',
-      aroma: 'Subtle & Nutty',
-      tag: 'Biryani Special',
-      image: '/images/1121 Golden Sella.jpeg',
-      desc: 'Parboiled basmati with a gorgeous golden hue. Parboiling locks in nutrients, making it highly durable for catering and heavy biryani preparations.'
-    },
+
     {
       id: '1121-steam',
       name: '1121 Steam Basmati Rice',
@@ -46,32 +34,8 @@ export default function Products() {
       image: '/images/1121 White Rice.jpeg',
       desc: 'The classic raw long basmati grain. Delivers unmatched natural fragrance and premium soft texture, perfect for royal cuisines.'
     },
-    {
-      id: '1121-white-sella',
-      name: '1121 White Sella Basmati Rice',
-      category: 'basmati',
-      length: '8.35 mm',
-      elongation: '2.0x',
-      moisture: '12.0%',
-      broken: '< 1%',
-      aroma: 'Delicate',
-      tag: 'Popular Export Grade',
-      image: '/images/1121 White Sella.jpeg',
-      desc: 'Parboiled white sella Basmati. Combines the signature extreme length of 1121 basmati with the structural rigidity of sella processing.'
-    },
-    {
-      id: '1509-golden-sella',
-      name: '1509 Golden Sella Basmati Rice',
-      category: 'basmati',
-      length: '8.2 mm',
-      elongation: '1.8x',
-      moisture: '12.0%',
-      broken: '< 1%',
-      aroma: 'Mild',
-      tag: 'Caterer Choice',
-      image: '/images/1509 Golden Sella.jpeg',
-      desc: 'Excellent length 1509 basmati grain parboiled to golden perfection. Cost-effective option for restaurants, hotels, and mass catering.'
-    },
+
+
     {
       id: '1509-steam',
       name: '1509 Steam Basmati Rice',
@@ -98,97 +62,10 @@ export default function Products() {
       image: '/images/1509 White Rice.jpeg',
       desc: 'Standard raw 1509 white basmati. Gives superior taste and authentic basmati aroma, suitable for premium daily consumption.'
     },
-    {
-      id: '1509-white-sella',
-      name: '1509 White Sella Basmati Rice',
-      category: 'basmati',
-      length: '8.2 mm',
-      elongation: '1.8x',
-      moisture: '12.0%',
-      broken: '< 1%',
-      aroma: 'Delicate',
-      tag: 'Wholesale Favorite',
-      image: '/images/1509 White Sella.jpeg',
-      desc: 'Creamy white parboiled sella rice of 1509 grade. Easy to cook and highly resistant to over-cooking or clumping.'
-    },
-    {
-      id: 'pr14-sella',
-      name: 'PR14 Sella Basmati Rice',
-      category: 'basmati',
-      length: '7.2 mm',
-      elongation: '1.7x',
-      moisture: '12.5%',
-      broken: '< 1%',
-      aroma: 'Medium',
-      tag: 'Premium Blend Grade',
-      image: '/images/PR14 Sella Basmati Rice.jpeg',
-      desc: 'Premium quality grain with good elongation. Excellent choice for custom packaging, high nutritional value, and clean taste.'
-    },
-    {
-      id: 'sugandha-sella',
-      name: 'Sugandha Sella Rice',
-      category: 'basmati',
-      length: '7.8 mm',
-      elongation: '1.8x',
-      moisture: '12.0%',
-      broken: '< 1%',
-      aroma: 'Pleasant & Sweet',
-      tag: 'Fragrant Alternative',
-      image: '/images/Sugandha Sella.jpeg',
-      desc: 'A highly aromatic Basmati-like variety. Known for its intense fragrance and great cooking texture at a highly competitive export price.'
-    },
-    {
-      id: 'sabarmati-sella',
-      name: 'Sabarmati Sella Rice',
-      category: 'basmati',
-      length: '7.4 mm',
-      elongation: '1.7x',
-      moisture: '12.0%',
-      broken: '< 1%',
-      aroma: 'Mild',
-      tag: 'Aromatic Value',
-      image: '/images/Sabarmati Sella.jpeg',
-      desc: 'Traditional aromatic rice processed using parboiled sella method. Delivers good body, sweet taste, and consistent size.'
-    },
-    {
-      id: 'pr11-sella',
-      name: 'PR11 Sella Rice',
-      category: 'non-basmati',
-      length: '6.8 mm',
-      elongation: '1.4x',
-      moisture: '13.0%',
-      broken: '< 5%',
-      aroma: 'Mild',
-      tag: 'Nutritional Staple',
-      image: '/images/PR11 Sella.jpeg',
-      desc: 'A premium long-grain non-basmati sella variety. Extremely popular across global markets for daily staple and industrial exports.'
-    },
-    {
-      id: 'rh10-sella',
-      name: 'RH10 Sella Rice',
-      category: 'non-basmati',
-      length: '6.5 mm',
-      elongation: '1.4x',
-      moisture: '13.0%',
-      broken: '< 5%',
-      aroma: 'Neutral',
-      tag: 'High Demand Staple',
-      image: '/images/RH10 Sella.jpeg',
-      desc: 'High-quality non-basmati sella rice with excellent uniformity. Easy to digest and durable under typical long-distance transport.'
-    },
-    {
-      id: 'sona-mansuri',
-      name: 'Sona Mansuri Rice',
-      category: 'non-basmati',
-      length: '5.2 mm',
-      elongation: '1.3x',
-      moisture: '12.5%',
-      broken: '< 2%',
-      aroma: 'Sweet',
-      tag: 'Everyday Comfort',
-      image: '/images/Sona Mansuri.jpeg',
-      desc: 'Lightweight and aromatic medium-grain rice. Widely consumed in Southern and Central Indian households and popular among diaspora markets.'
-    }
+
+
+
+    
   ];
 
   const filteredProducts = products.filter(p => p.category === activeTab);
@@ -213,7 +90,7 @@ export default function Products() {
           <span className="tag">Our Product Range</span>
           <h2>The Gold Standard Of Grains</h2>
           <p>
-            Explore our curated catalog of Basmati and Non-Basmati rice. Every batch undergoes testing before export sealing.
+            Explore our curated catalog of Basmati rice. Every batch undergoes testing before export sealing.
           </p>
         </div>
 
@@ -224,12 +101,6 @@ export default function Products() {
             onClick={() => setActiveTab('basmati')}
           >
             Premium Basmati
-          </button>
-          <button 
-            className={`tab-btn ${activeTab === 'non-basmati' ? 'tab-active' : ''}`}
-            onClick={() => setActiveTab('non-basmati')}
-          >
-            Non-Basmati Staple
           </button>
         </div>
 

@@ -64,7 +64,7 @@ export default function Header({ isDarkMode, setIsDarkMode }) {
           <div className="topbar-left">
             <span className="topbar-info-item">
               <span className="topbar-icon" style={{ color: '#13982e', marginRight: '6px' }}>📍</span> 
-              NH-44, GT Road, Near Grain Market, Karnal - 132001, Haryana, India
+              Kurukshetra Kirmach road, opposite hafed godown, Kirmach, Kurukshetra, Haryana 136118
             </span>
             <span className="topbar-info-item">
               <span className="topbar-icon" style={{ color: '#13982e', marginRight: '6px' }}>✉️</span> 
@@ -172,7 +172,7 @@ export default function Header({ isDarkMode, setIsDarkMode }) {
               </div>
               <div className="helpline-info">
                 <span className="helpline-label">Call us on</span>
-                <a href="tel:+919876543210" className="helpline-number">+91 98765 43210</a>
+                <a href="tel:+917082555644" className="helpline-number">+91 70825 55644</a>
               </div>
             </div>
 

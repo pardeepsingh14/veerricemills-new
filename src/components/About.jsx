@@ -54,10 +54,37 @@ export default function About() {
             </div>
             
             <p style={{ color: '#444444', fontSize: '1.05rem', lineHeight: '1.7', margin: 0 }}>
+              Every great journey begins with a vision.
+
               The story of <strong>Veer Rice Mills</strong> traces its roots back to the 1950s, when our founder, <strong>Late Shri Rattan Singh</strong>, dedicated his life to farming with honesty, hard work, and an unwavering commitment to quality. At a time when agriculture relied mainly on traditional methods, he believed that innovation could transform the future of farming.
             </p>
+
             <p style={{ color: '#555555', fontSize: '0.95rem', lineHeight: '1.6', margin: 0 }}>
-              Inspired by this vision, the family established Veer Rice Mills in <strong>2017</strong>, carrying forward his values while embracing modern technology. What started as a dream has grown into a trusted rice processing company committed to delivering premium-quality rice to customers across the globe. Today, Veer Rice Mills combines generations of agricultural knowledge with state-of-the-art milling technology to produce exceptional Basmati and Non-Basmati rice.
+              Inspired by this vision, the family established <strong>Veer Rice Mills</strong> in <strong>2017</strong>, carrying forward his values while embracing modern technology. What started as a dream has grown into a trusted rice processing company committed to delivering premium-quality rice to customers across the globe.
+            </p>
+
+            <p style={{ color: '#555555', fontSize: '0.95rem', lineHeight: '1.6', margin: 0 }}>
+              Driven by continuous growth and a commitment to excellence, the company achieved another significant milestone in 2019 with the establishment of <strong>Madhav Foods</strong>, a sister unit of Veer Rice Mills. The launch of Madhav Foods strengthened our manufacturing capabilities, expanded our production capacity, and reinforced our commitment to delivering world-class rice products to customers worldwide.
+            </p>
+
+            <p style={{ color: '#555555', fontSize: '0.95rem', lineHeight: '1.6', margin: 0 }}>
+              Today, Veer Rice Mills combines generations of agricultural knowledge with state-of-the-art milling technology to produce exceptional Basmati and Non-Basmati rice. Every grain is carefully selected, processed, and packaged under strict quality standards to ensure superior aroma, purity, taste, and consistency.
+            </p>
+
+            <p style={{ color: '#555555', fontSize: '0.95rem', lineHeight: '1.6', margin: 0 }}>
+              We specialize in processing a wide range of premium rice varieties for wholesalers, distributors, retailers, supermarkets, hotels, and food service businesses worldwide. Our advanced processing systems, modern infrastructure, and rigorous quality control enable us to meet international standards while preserving the natural excellence of every harvest.
+            </p>
+
+            <p style={{ color: '#555555', fontSize: '0.95rem', lineHeight: '1.6', margin: 0 }}>
+              At Veer Rice Mills, we believe that quality begins in the field and is perfected through technology. Our commitment extends beyond manufacturing—we focus on building long-term partnerships based on trust, transparency, reliability, and customer satisfaction.
+            </p>
+
+            <p style={{ color: '#555555', fontSize: '0.95rem', lineHeight: '1.6', margin: 0 }}>
+              As we continue to expand into global markets, our mission remains unchanged: to deliver world-class Indian rice while honoring the agricultural heritage that laid our foundation more than seven decades ago.
+            </p>
+
+            <p style={{ color: '#222222', fontSize: '0.95rem', lineHeight: '1.6', marginTop: '0.75rem', fontWeight: '700' }}>
+              Veer Rice Mills — From the Fields of India to Tables Around the World.
             </p>
             
             <ul style={{ listStyle: 'none', padding: 0, margin: '1rem 0 1.5rem 0', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
