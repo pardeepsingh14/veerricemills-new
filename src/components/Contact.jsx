@@ -18,7 +18,7 @@ export default function Contact() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const OWNER_EMAIL = 'pardeep.singh14@gmail.com';
+  const OWNER_EMAIL = 'info@veerricemills.com';
   const OWNER_WHATSAPP = '917082555644';
 
   const getVarietyLabel = (val) => {
@@ -113,7 +113,7 @@ export default function Contact() {
                   <div style={{ background: 'var(--surface-hover)', border: '1px solid var(--border-color)', padding: '0.75rem', borderRadius: '50%', color: 'var(--accent-color)' }}><Mail size={20} /></div>
                   <div>
                     <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Email Inquiries</span>
-                    <h4 style={{ fontSize: '1rem', color: 'var(--text-bright)' }}>pardeep.singh14@gmail.com</h4>
+                    <h4 style={{ fontSize: '1rem', color: 'var(--text-bright)' }}>info@veerricemills.com</h4>
                   </div>
                 </div>
 
@@ -123,14 +123,6 @@ export default function Contact() {
                     <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Milling Plant & HQ Address</span>
                     <h4 style={{ fontSize: '1rem', color: 'var(--text-bright)' }}>Kurukshetra Kirmach road, opposite hafed godown, Kirmach, Kurukshetra, Haryana 136118</h4>
                     <a href="https://maps.app.goo.gl/NQBVPH8MHxskZLUg6?g_st=aw" target="_blank" rel="noreferrer" style={{ fontSize: '0.85rem', color: 'var(--accent-color)', display: 'inline-block', marginTop: '0.35rem' }}>Open location</a>
-                  </div>
-                </div>
-
-                <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', marginTop: '1rem' }}>
-                  <div style={{ background: 'var(--surface-hover)', border: '1px solid var(--border-color)', padding: '0.75rem', borderRadius: '50%', color: 'var(--accent-color)' }}><MapPin size={20} /></div>
-                  <div>
-                    <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Sister Concern</span>
-                    <h4 style={{ fontSize: '1rem', color: 'var(--text-bright)' }}>Nigdhu Patanpuri Road, Nigdhu, Teh Nilokheri, Karnal 132157</h4>
                   </div>
                 </div>
               </div>
